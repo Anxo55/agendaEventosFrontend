@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const URL_BASE = 'http://localhost:3000/api/'
 export const getUsers = async () => {
     try {
@@ -17,3 +19,18 @@ export const getUsers = async () => {
         throw new Error(msg)
     }
 }
+
+export const fetchUserProfile = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) return null;
+
+    try {
+        const response = await axios.get(`${URL_BASE}users/profile`, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching user profile:", error);
+        return null;
+    }
+};
