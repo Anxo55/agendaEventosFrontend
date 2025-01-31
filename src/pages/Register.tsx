@@ -1,5 +1,6 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { registerUser } from "../services/authService";
+import { Link } from "react-router-dom";
 
 export default function Register() {
 
@@ -170,6 +171,15 @@ export default function Register() {
             terms and conditions
           </a>
         </label>
+        <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                Have an account?{" "}
+                <Link
+                  to="/login"
+                  className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                >
+                  Login here
+                </Link>
+              </p>
       </div>
       <button
         type="submit"

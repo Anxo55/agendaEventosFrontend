@@ -33,7 +33,7 @@ export default function SideBar({ setSidebarOpen }: { setSidebarOpen: (isOpen: b
           <li><a href="/login" className="block hover:text-gray-300">🔑 Login</a></li>
           <li><a href="/register" className="block hover:text-gray-300">📝 Register</a></li>
           <li><a href="/profile" className="block hover:text-gray-300">👤 Profile</a></li>
-          <li><a href="/usersProfile" className="block hover:text-gray-300">👥 Users Profile</a></li>
+          {/* <li><a href="/usersProfile" className="block hover:text-gray-300">👥 Users Profile</a></li> */}
         </ul>
       </div>
     </>

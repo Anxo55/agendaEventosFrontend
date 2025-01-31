@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function TypingEffect() {
@@ -19,7 +19,7 @@ function TypingEffect() {
     };
 
     type();
-    
+
     return () => clearTimeout(timeout);
   }, []);
 
@@ -84,12 +84,100 @@ export default function Home() {
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
+              src="https://piratafestival.com/images/2024/cartel/pirata-galiza-2.jpg"
+              alt="mockup"
+              height={200}
+              width={400}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white dark:bg-gray-900">
+        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+          <img
+            className="w-full hidden dark:block"
+            src="https://vigoplan.com/wp-content/uploads/2024/04/Melendi.jpeg"
+            alt="dashboard image"
+            height={200}
+            width={400}
+          />
+          <div className="mt-4 md:mt-0">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Let's create more tools and ideas that brings us together.
+            </h2>
+            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+              Flowbite helps you connect with friends and communities of people
+              who share your interests. Connecting with your friends and family
+              as well as discovering new ones is easy with features like Groups.
+            </p>
+            <a
+              href="#"
+              className="inline-flex bg-blue-600 hover:bg-blue-700 items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+            >
+              View More
+              <svg
+                className="ml-2 -mr-1 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    
+      <section className="bg-white dark:bg-gray-900 mt-8">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+              Payments tool for software companies
+            </h2>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+              From checkout to global sales tax compliance, companies around the
+              world use Flowbite to simplify their payment stack.
+            </p>
+            <Link
+              to="#"
+              className="bg-gray-600 hover:bg-gray-500 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-white rounded-lg focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            >
+              <img 
+              src="https://www.consuunt.es/wp-content/uploads/2022/01/Ejemplo-de-Reloj-Estrategico-de-Bowman-Apple-480x480.png" 
+              alt=""
+              width={40} 
+              />
+
+              Download on the
+              Mac App Store
+            </Link>
+            <Link
+              to="#"
+              className="bg-gray-600 hover:bg-gray-500 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-white rounded-lg focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            >
+              <img 
+              src="https://www.ubaye.com/telechargements/Logos/logo-google-play.png" 
+              alt="" 
+              width={40} />
+
+              Download on the
+              App Store
+            </Link>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img
+              src="https://catalogo.claro.com.ec/uploads/imgs/productos/iphone-13-128gb/azul/zoom/02-iphone-13-128gb-azul-side.png"
               alt="mockup"
             />
           </div>
         </div>
       </section>
+
     </div>
   );
 }
