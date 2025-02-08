@@ -1,9 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { loginUser } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Login() {
   
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -18,6 +20,7 @@ export default function Login() {
       await loginUser(form.email, form.password);
       console.log("Login succesfull");
       setMessage("Login succesfull");
+      navigate("/");
       //redirigir a otra pagina
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Error desconocido";

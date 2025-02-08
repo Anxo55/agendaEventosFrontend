@@ -8,6 +8,7 @@ import UsersProfile from "./pages/UsersProfile";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
+import EventsList from "./pages/EventsList";
 import { useState } from "react";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/usersProfile" element={<UsersProfile />} />
+            <Route path="/eventsList" element={<EventsList/>}/>
           </Routes>
         </div>
         <Footer />

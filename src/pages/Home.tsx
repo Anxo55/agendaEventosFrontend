@@ -111,8 +111,8 @@ export default function Home() {
               who share your interests. Connecting with your friends and family
               as well as discovering new ones is easy with features like Groups.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/register"
               className="inline-flex bg-blue-600 hover:bg-blue-700 items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
             >
               View More
@@ -128,7 +128,7 @@ export default function Home() {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

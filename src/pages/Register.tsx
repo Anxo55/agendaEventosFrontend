@@ -1,10 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { registerUser } from "../services/authService";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
 
-
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     name: "",
     surname: "",
@@ -23,6 +23,7 @@ export default function Register() {
           await registerUser(form.name, form.surname, form.email, form.password, form.role, form.course);
           console.log("Register succesfull");
           setMessage("Register succesfull");
+          navigate("/");
           //redirigir a otra pagina
         } catch (error) {
           const msg = error instanceof Error ? error.message : "Error desconocido";
