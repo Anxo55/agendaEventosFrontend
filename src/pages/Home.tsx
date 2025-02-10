@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 function TypingEffect() {
   const [text, setText] = useState("");
   const fullText = "Anxo Campos Web";
-  const typingSpeed = 150; // Velocidad de escritura en ms
+  const typingSpeed = 150; 
 
   useEffect(() => {
     let currentIndex = 0;
-    let timeout: number | undefined; // ✅ Cambio aquí
+    let timeout: number | undefined; 
 
     const type = () => {
       if (currentIndex <= fullText.length) {
         setText(fullText.slice(0, currentIndex));
         currentIndex++;
-        timeout = window.setTimeout(type, typingSpeed); // ✅ `window.setTimeout`
+        timeout = window.setTimeout(type, typingSpeed); 
       }
     };
 
@@ -123,9 +123,9 @@ export default function Home() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </Link>
