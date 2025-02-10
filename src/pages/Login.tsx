@@ -20,7 +20,7 @@ export default function Login() {
       await loginUser(form.email, form.password);
       console.log("Login succesfull");
       setMessage("Login succesfull");
-      navigate("/");
+      navigate("/eventsList");
       //redirigir a otra pagina
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Error desconocido";

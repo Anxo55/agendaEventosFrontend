@@ -23,7 +23,7 @@ export default function Register() {
           await registerUser(form.name, form.surname, form.email, form.password, form.role, form.course);
           console.log("Register succesfull");
           setMessage("Register succesfull");
-          navigate("/");
+          navigate("/eventsList");
           //redirigir a otra pagina
         } catch (error) {
           const msg = error instanceof Error ? error.message : "Error desconocido";
