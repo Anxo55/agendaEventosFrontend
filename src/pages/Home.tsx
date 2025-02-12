@@ -148,7 +148,7 @@ export default function Home() {
               className="bg-gray-600 hover:bg-gray-500 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-white rounded-lg focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
               <img 
-              src="https://www.consuunt.es/wp-content/uploads/2022/01/Ejemplo-de-Reloj-Estrategico-de-Bowman-Apple-480x480.png" 
+              src="https://logo.com/image-cdn/images/kts928pd/production/9fa92ac5a9498502d2707ced798d763fe7490ecc-1600x1026.png?w=3840&q=72" 
               alt=""
               width={40} 
               />
@@ -161,9 +161,9 @@ export default function Home() {
               className="bg-gray-600 hover:bg-gray-500 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-white rounded-lg focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
               <img 
-              src="https://www.ubaye.com/telechargements/Logos/logo-google-play.png" 
+              src="https://th.bing.com/th/id/R.df03fd57af7663c42ef802b16ff98d39?rik=ZzswTCwWXwi3QA&pid=ImgRaw&r=0" 
               alt="" 
-              width={40} />
+              width={25} />
 
               Download on the
               App Store
