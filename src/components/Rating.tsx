@@ -6,7 +6,7 @@ export default function Rating({ onRate: onRate }: { onRate?: (rating: number) =
 
   const handleClick = (value: React.SetStateAction<number>) => {
     setRating(value);
-    if (onRate) onRate(value); 
+    if (onRate) onRate(value as number); 
   };
 
   return (
