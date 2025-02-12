@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
 import EventsList from "./pages/EventsList";
 import { useState } from "react";
+import EventDetail from "./pages/EventDetail";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -34,6 +35,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/usersProfile" element={<UsersProfile />} />
             <Route path="/eventsList" element={<EventsList/>}/>
+            <Route path="/events/:id" element={<EventDetail/>}/>
           </Routes>
         </div>
         <Footer />
