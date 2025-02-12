@@ -1,10 +1,10 @@
-const URL_BASE = 'http://localhost:3000/api/'
+const URL_BASE = import.meta.env.VITE_API_BASE_URL
 
 export const getAll = async () => {
 
     try {
     
-    const response = await fetch(URL_BASE + 'events/', {
+    const response = await fetch(URL_BASE + '/events/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export const getAll = async () => {
 export const getById = async  (id:number) => {
     try {
         
-        const response = await fetch(URL_BASE + 'events/' + id, {
+        const response = await fetch(URL_BASE + '/events/' + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
