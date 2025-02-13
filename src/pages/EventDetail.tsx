@@ -54,7 +54,7 @@ function EventDetail() {
         <p className="text-gray-500 mt-2">📍 {event.location}</p>
         
         <Link to={""} className="mt-3 bg-blue-500 rounded-2xl border-1 m-20 hover:bg-blue-600 font-medium px-3 py-1">Comprar entrada evento</Link>
-        <Link to={""} className="mt-3 bg-red-500 rounded-2xl border-1 m-20 hover:bg-red-600 font-medium px-3 py-1">Descartar evento</Link> 
+        {/* <Link to={""} className="mt-3 bg-red-500 rounded-2xl border-1 m-20 hover:bg-red-600 font-medium px-3 py-1">Descartar evento</Link>  */}
         
       </div>
 
