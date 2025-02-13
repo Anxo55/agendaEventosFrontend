@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { deleteEvent, getAll } from "../services/events.service";
 import toast from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 interface Event {
     id: number;
@@ -13,6 +14,7 @@ interface Event {
 function EventsList() {
   const [events, setEvents] = useState<Event[]>([]); 
   const [loading, setLoading] = useState(true); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -42,6 +44,10 @@ function EventsList() {
     }
   };
 
+  const handleViewEvent = (id: number) => {
+    navigate(`/events/${id}`);
+  };
+
   return (
     <div className="max-w-5xl mx-auto p-4">
       <h2 className="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
@@ -59,13 +65,13 @@ function EventsList() {
               key={event.id}
               className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
             >
-              {/* {event.imageUrl && (
+              {event.imageUrl && (
                 <img
                   src={event.imageUrl}
                   alt={event.title}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
-              )} */}
+              )}
 
               <div className="p-5">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -77,8 +83,8 @@ function EventsList() {
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   📍 {event.location}
                 </p>
-                <a
-                  href={`/events/${event.id}`}
+                <button
+                  onClick={() => handleViewEvent(event.id)}
                   className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Comprar Entrada
@@ -97,13 +103,12 @@ function EventsList() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </button>
                 <button
                 onClick={() => handleDelete(event.id)}
                   className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-red-500 dark:hover:bg-red-600 cursor-pointer m-10"
                 >
                   Descartar evento
-                  
                 </button>
               </div>
             </div>
