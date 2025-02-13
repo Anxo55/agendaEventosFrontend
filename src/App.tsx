@@ -11,6 +11,7 @@ import SideBar from "./components/SideBar";
 import EventsList from "./pages/EventsList";
 import { useState } from "react";
 import EventDetail from "./pages/EventDetail";
+import EventForm from "./pages/EventForm";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -36,6 +37,7 @@ function App() {
             <Route path="/usersProfile" element={<UsersProfile />} />
             <Route path="/eventsList" element={<EventsList/>}/>
             <Route path="/events/:id" element={<EventDetail/>}/>
+            <Route path="/eventForm" element={<EventForm/>}/>
           </Routes>
         </div>
         <Footer />

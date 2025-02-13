@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { getAll } from "../services/events.service";
+import { deleteEvent, getAll } from "../services/events.service";
+import toast from "react-hot-toast";
 
 interface Event {
     id: number;
@@ -26,14 +27,27 @@ function EventsList() {
     };
 
     fetchEvents();
-  }, []);
+  }, []);  
+
+  const handleDelete = async (id: number) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar este evento?")) {
+      try {
+        await deleteEvent(id);
+        setEvents(events.filter(event => event.id !== id));
+        toast.success("Evento eliminado con éxito");
+      } catch (error) {
+        console.error("Error eliminando evento:", error);
+        toast.error("Error al eliminar el evento");
+      }
+    }
+  };
 
   return (
     <div className="max-w-5xl mx-auto p-4">
       <h2 className="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
         Eventos Disponibles
       </h2>
-
+      
       {loading ? (
         <p className="text-center text-gray-500">Cargando eventos...</p>
       ) : events.length === 0 ? (
@@ -45,13 +59,13 @@ function EventsList() {
               key={event.id}
               className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
             >
-              {/* {event.imageUrl && (
+              {event.imageUrl && (
                 <img
                   src={event.imageUrl}
                   alt={event.title}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
-              )} */}
+              )}
 
               <div className="p-5">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -67,7 +81,7 @@ function EventsList() {
                   href={`/events/${event.id}`}
                   className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
-                  Ver Más
+                  Comprar Entrada
                   <svg
                     className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                     aria-hidden="true"
@@ -84,6 +98,13 @@ function EventsList() {
                     />
                   </svg>
                 </a>
+                <button
+                onClick={() => handleDelete(event.id)}
+                  className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-red-500 dark:hover:bg-red-600 cursor-pointer m-10"
+                >
+                  Descartar evento
+                  
+                </button>
               </div>
             </div>
           ))}
