@@ -59,7 +59,7 @@ function EventDetail() {
       </div>
 
       
-        <a href="/eventsList" className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">Volver
+        <Link to="/eventsList" className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">Volver
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white"
           aria-hidden="true"
@@ -77,7 +77,7 @@ function EventDetail() {
             d="M5 12h14M5 12l4-4m-4 4 4 4"
           />
         </svg>
-        </a>
+        </Link>
     </>
   );
 }
