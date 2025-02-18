@@ -43,16 +43,19 @@ export const getById = async  (id:number) => {
 
 export const deleteEvent = async (id:number) => {
     try {
-        
+        const token = localStorage.getItem('token')
+        console.log("Token en deleteEvent: " + token)
         const response = await fetch(URL_BASE + '/events/' + id, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             credentials: 'include'
         })
         if(!response.ok) {
-            throw new Error('Error al eliminar evento')
+            const errorData = await response.json()
+            throw new Error(errorData.error || 'Error al eliminar evento')
         }
         return await response.json()
 }
