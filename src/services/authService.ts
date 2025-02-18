@@ -17,7 +17,16 @@ export const loginUser = async (email:string, password: string) => {
         if(!response.ok){
             throw new Error('Error al iniciar sesión')
         }
-        return await response.json()
+        const data = await response.json()
+        console.log('REspuesta del login', data)
+
+        if (data.token) {
+            localStorage.setItem("token", data.token); // 👈 Guarda el token
+        } else {
+            throw new Error("No se recibió un token válido");
+        }
+
+        return data;
         
     } catch (error) {
         const msg = error instanceof Error ? error.message : 'Error desconocido'

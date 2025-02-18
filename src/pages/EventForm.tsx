@@ -22,7 +22,7 @@ export default function EventForm() {
     try {
       await createEvent(event);
       toast.success('Evento creado con éxito');
-      navigate("/events");
+      navigate("/eventsList");
     } catch (error) {
       console.error('Error al crear el evento:', error);
       toast.error('Error al crear el evento');
