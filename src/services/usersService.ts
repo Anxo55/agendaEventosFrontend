@@ -26,7 +26,7 @@ export const fetchUserProfile = async () => {
     if (!token) return null;
 
     try {
-        const response = await axios.get(`${URL_BASE}users/profile`, {
+        const response = await axios.get(`${URL_BASE}/users/profile`, {
             headers: { Authorization: `Bearer ${token}` }
         });
         return response.data;
