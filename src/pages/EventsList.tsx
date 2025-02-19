@@ -25,6 +25,8 @@ function EventsList() {
           event.location.toLowerCase().includes(search.toLowerCase())
         );
         setEvents(filteredEvents);
+      
+        
       } catch (error) {
         console.error("Error fetching events:", error);
       } finally {
@@ -34,6 +36,12 @@ function EventsList() {
 
     fetchEvents();
   }, [search]);
+
+ 
+  useEffect(()=>{  console.log("Eventos");
+    console.log(events.forEach(event => console.log(event.imageUrl)));;
+  }
+  ,[events])
 
   const handleDelete = async (id: number) => {
     if (window.confirm("¿Estás seguro de que deseas eliminar este evento?")) {
