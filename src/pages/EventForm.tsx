@@ -9,6 +9,7 @@ export default function EventForm() {
     description: "",
     location: "",
     imageUrl: "",
+    date: ""
   });
   const navigate = useNavigate();
 
@@ -67,6 +68,13 @@ export default function EventForm() {
           onChange={handleChange}
           className="w-full p-2 border rounded-2xl text-white placeholder:text-white"
         />
+        <input
+        type="datetime-local"
+        name="date"
+        onChange={handleChange}
+        className="w-full p-2 border rounded-2xl text-white placeholder:text-white"
+        required
+    />
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 rounded-2xl border-2 hover:bg-green-700"

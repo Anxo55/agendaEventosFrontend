@@ -69,8 +69,9 @@ catch (error) {
 interface EventData {
     title: string;
     location: string;
-    description?: string;
-    imageUrl: string;
+    description: string;
+    imageUrl?: string;
+    date: string;
 }
 
 export const createEvent = async (eventData: EventData) => {
