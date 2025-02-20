@@ -23,7 +23,11 @@ export default function EventForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await createEvent(event);
+      await createEvent({
+        ...event,
+        imageUrl: event.imageUrl || "", // 👈 Si `imageUrl` es vacío, enviamos una cadena vacía en lugar de `undefined`
+        date: new Date(event.date).toISOString() // 👈 Convertimos `date` en un formato compatible
+    })
       toast.success("Evento creado con éxito");
       navigate("/eventsList");
     } catch (error) {
