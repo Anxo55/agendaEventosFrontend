@@ -100,8 +100,8 @@ function EventsList() {
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{event.title}</h5>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{event.description}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">📍 {event.location}</p>
-                <button onClick={() => handleViewEvent(event.id)} className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800">Comprar Entrada</button>
-                <button onClick={() => handleDelete(event.id)} className="mt-3 ml-2 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700">Descartar evento</button>
+                <button onClick={() => handleViewEvent(event.id)} className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 cursor-pointer">Comprar Entrada</button>
+                <button onClick={() => handleDelete(event.id)} className="mt-3 ml-2 inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 cursor-pointer">Descartar evento</button>
               </div>
             </div>
           ))}
