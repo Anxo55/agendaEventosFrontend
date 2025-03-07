@@ -17,32 +17,32 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <BrowserRouter>
-      {/* Sidebar */}
-      <SideBar setSidebarOpen={setSidebarOpen} />
+      <BrowserRouter>
+        {/* Sidebar */}
+        <SideBar setSidebarOpen={setSidebarOpen} />
 
-      {/* Contenedor Principal */}
-      <div
-        className={`flex flex-col min-h-screen transition-all duration-300 ${
-          sidebarOpen ? "pl-64" : "pl-0"
-        }`}
-      >
-        <NavBar />
-        <div className="flex-grow container mx-auto px-8 py-30">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/usersProfile" element={<UsersProfile />} />
-            <Route path="/eventsList" element={<EventsList/>}/>
-            <Route path="/events/:id" element={<EventDetail/>}/>
-            <Route path="/eventForm" element={<EventForm/>}/>
-          </Routes>
+        {/* Contenedor Principal */}
+        <div
+          className={`flex flex-col min-h-screen transition-all duration-300 ${
+            sidebarOpen ? "pl-64" : "pl-0"
+          }`}
+        >
+          <NavBar />
+          <div className="flex-grow container mx-auto px-8 py-30">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/usersProfile" element={<UsersProfile />} />
+              <Route path="/eventsList" element={<EventsList/>}/>
+              <Route path="/events/:id" element={<EventDetail/>}/>
+              <Route path="/eventForm" element={<EventForm/>}/>
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
   );
 }
 
