@@ -12,6 +12,9 @@ import EventsList from "./pages/EventsList";
 import { useState } from "react";
 import EventDetail from "./pages/EventDetail";
 import EventForm from "./pages/EventForm";
+import ListarQuejas from "./pages/ListarQuejas";
+import AñadirQueja from "./pages/AñadirQueja";
+
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -38,6 +41,8 @@ function App() {
               <Route path="/eventsList" element={<EventsList/>}/>
               <Route path="/events/:id" element={<EventDetail/>}/>
               <Route path="/eventForm" element={<EventForm/>}/>
+              <Route path="/quejas" element={<ListarQuejas/>}/> 
+              <Route path="/nueva-queja" element={<AñadirQueja />} />
             </Routes>
           </div>
           <Footer />

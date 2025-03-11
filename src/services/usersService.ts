@@ -4,7 +4,7 @@ import axios from "axios";
 const URL_BASE = import.meta.env.VITE_API_BASE_URL
 export const getUsers = async () => {
     try {
-        const response = await fetch(URL_BASE + 'users/', {
+        const response = await fetch(`${URL_BASE}/users/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
